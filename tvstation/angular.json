@@ -128,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "tvstation"
+  "defaultProject": "tvstation",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
