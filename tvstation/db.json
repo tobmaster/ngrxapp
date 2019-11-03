@@ -1,0 +1,20 @@
+{
+  "clips": [
+    {
+      "id": 1,
+      "show": "Anne Will",
+      "title": "Die Führungsfrage - wissen CDU und SPD noch, wo sie hinwollen?",
+      "description": "Cookie topping gummi bears soufflé fruitcake cake jujubes. Lemon drops cotton candy caramels oat cake chocolate cake cheesecake cookie halvah muffin. Lemon drops gummi bears sweet pastry gummi bears bonbon chocolate muffin danish. Lollipop soufflé pie lemon drops tiramisu halvah soufflé. Cake sweet sesame snaps sugar plum sweet chocolate cake. Cake biscuit macaroon. Tart caramels candy canes croissant chocolate bar ice cream. Chocolate sweet roll gingerbread gummies. Sesame snaps candy canes fruitcake cotton candy fruitcake marshmallow dragée. Tootsie roll cake jelly-o muffin chupa chups. Cake chocolate cupcake dragée. Sweet roll tiramisu chocolate cake halvah tiramisu.",
+      "duration": 12,
+      "imageUrl": "https://www.dw.com/image/18977927_306.png"
+    },
+    {
+      "id": 2,
+      "show": "Ernie & Bert",
+      "title": "Das Ufo",
+      "description": "Powder croissant jelly. Cake liquorice carrot cake fruitcake croissant bonbon. Donut muffin cotton candy gummies oat cake wafer tiramisu pastry. Tart marzipan lemon drops bonbon donut. Toffee lemon drops lollipop muffin oat cake muffin. Liquorice marzipan marshmallow bonbon soufflé marshmallow marzipan jelly beans macaroon. Pudding candy biscuit jelly jelly beans jelly jelly beans. Sweet roll cheesecake pastry chupa chups brownie jelly gummies fruitcake carrot cake. Gingerbread cotton candy bear claw jelly muffin jelly pie liquorice sesame snaps. Bonbon dragée jelly-o carrot cake carrot cake brownie danish icing. Tootsie roll tiramisu chocolate fruitcake. Bonbon pie caramels ice cream cheesecake.",
+      "duration": 60,
+      "imageUrl": "https://www.dw.com/image/16451191_303.jpg"
+    }
+  ]
+}

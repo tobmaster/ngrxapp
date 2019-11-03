@@ -1,0 +1,23 @@
+<ng-container *ngIf="clipList$ | async; else loading">
+  <div *ngFor="let clip of clipList$ | async">
+    <button class="delete-button" mat-stroked-button color="warn" (click)="onDelete(clip)">Delete</button>
+    <app-clip show="{{clip.show}}"
+              title="{{clip.title}}"
+              description="{{clip.description}}"
+              imageUrl="{{clip.imageUrl}}"
+              duration="{{clip.duration}}"></app-clip>
+    <hr/>
+  </div>
+</ng-container>
+
+<ng-template #loading>
+  <mat-progress-spinner
+    [color]="'primary'"
+    [mode]="'indeterminate'">
+  </mat-progress-spinner>
+</ng-template>
+
+<mat-card>
+  <mat-card-title>Create new entry</mat-card-title>
+  <app-create-clip (save)="onSave($event)"></app-create-clip>
+</mat-card>

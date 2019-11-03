@@ -1,0 +1,19 @@
+<form [formGroup]="clipForm" (ngSubmit)="onSubmit()" novalidate>
+  <mat-form-field>
+    <input matInput formControlName="show" placeholder="Show"/>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="title" placeholder="Title"/>
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput formControlName="description" placeholder="Description"></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="imageUrl" placeholder="Image Url"/>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="duration" placeholder="Duration in Minutes"/>
+  </mat-form-field>
+
+  <button type="submit" [disabled]="clipForm.pristine">Save</button>
+</form>

@@ -1,0 +1,33 @@
+div {
+  overflow: hidden;
+}
+
+h2, h3 {
+  margin: 0.2em 0;
+}
+
+h2 {
+  color: #364b62;
+}
+
+h3 {
+  color: #41474b;
+}
+
+small {
+  color: #c0c0c0;
+  margin: 0;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+img {
+  border: 1px solid #c0c0c0;
+  display: inline;
+  float: left;
+  max-height: 100px;
+  max-width: 120px;
+  margin-right: 10px;
+}
