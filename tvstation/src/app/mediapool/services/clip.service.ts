@@ -11,8 +11,8 @@ export class ClipService {
 
   constructor(private http: HttpClient) { }
 
-  list(): Observable<Clip> {
-    return this.http.get<Clip>(`${this.url}/clips`);
+  list(): Observable<Clip[]> {
+    return this.http.get<Clip[]>(`${this.url}/clips`);
   }
 
   save(clip: Clip) {

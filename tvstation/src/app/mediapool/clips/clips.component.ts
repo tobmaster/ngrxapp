@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {ClipService} from '../services/clip.service';
 import {Observable} from 'rxjs';
 import {Clip} from '../data/clip';
+import {select, Store} from '@ngrx/store';
+import {AppState, selectClips} from '../../store';
+import {clipsFetch, clipsLoaded} from '../../store/clip.actions';
 
 @Component({
   selector: 'app-clips',
@@ -10,16 +13,20 @@ import {Clip} from '../data/clip';
 })
 export class ClipsComponent implements OnInit {
 
-  clipList$: Observable<Clip>;
+  clipList$: Observable<Clip[]>;
 
-  constructor(private clipService: ClipService) {}
+  constructor(private clipService: ClipService, private store: Store<AppState>) {
+  }
 
   ngOnInit() {
+    this.clipList$ = this.store.pipe(select(selectClips));
     this.loadList();
   }
 
   loadList() {
-    this.clipList$ = this.clipService.list();
+    this.store.dispatch(clipsFetch());
+
+    // this.clipService.list().subscribe(loadedClips => this.store.dispatch(clipsLoaded({clips: loadedClips})));
   }
 
   onSave(clip: Clip) {

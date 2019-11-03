@@ -30,13 +30,14 @@ import {reducers, metaReducers} from './store';
     MatToolbarModule,
     MatListModule,
     MatButtonModule,
-    StoreModule.forRoot(reducers, {
-      metaReducers,
-      runtimeChecks: {
-        strictStateImmutability: true,
-        strictActionImmutability: true,
-      }
-    }),
+    StoreModule.forRoot(
+      reducers, {
+        metaReducers,
+        runtimeChecks: {
+          strictStateImmutability: true,
+          strictActionImmutability: true,
+        }
+      }),
     !environment.production ? StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}) : []
   ],
   providers: [],

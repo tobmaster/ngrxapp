@@ -1,20 +1,16 @@
-import {
-  ActionReducer,
-  ActionReducerMap,
-  createFeatureSelector,
-  createSelector,
-  MetaReducer
-} from '@ngrx/store';
-import { environment } from '../../environments/environment';
+import {ActionReducerMap, MetaReducer} from '@ngrx/store';
+import {ClipState, reducer as clipReducer} from './clip.reducers';
 
-
-export interface State {
-
+export interface AppState {
+  mediapool: ClipState;
 }
 
-export const reducers: ActionReducerMap<State> = {
-
+export const reducers: ActionReducerMap<AppState> = {
+  mediapool: clipReducer
 };
 
 
-export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];
+export const metaReducers: MetaReducer<AppState>[] = [];
+
+// Selectors
+export const selectClips = (state: AppState) => state.mediapool.clips;
