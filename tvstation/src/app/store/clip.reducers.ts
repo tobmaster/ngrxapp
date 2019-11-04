@@ -24,6 +24,18 @@ const clipReducer = createReducer(
       ...state,
       clips: payload.clips
     };
+  }),
+  on(ClipActions.clipCreated, (state, payload) => {
+    return {
+      ...state,
+      clips: [...state.clips, payload.clip]
+    };
+  }),
+  on(ClipActions.clipDeleted, (state, payload) => {
+    return {
+      ...state,
+      clips: state.clips.filter(clip => clip.id !== payload.id)
+    };
   })
 );
 

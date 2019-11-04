@@ -14,6 +14,8 @@ import {StoreModule} from '@ngrx/store';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment';
 import {reducers, metaReducers} from './store';
+import { EffectsModule } from '@ngrx/effects';
+import { ClipsEffects } from './effects/clips.effects';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import {reducers, metaReducers} from './store';
           strictActionImmutability: true,
         }
       }),
-    !environment.production ? StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}) : []
+    !environment.production ? StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}) : [],
+    EffectsModule.forRoot([ClipsEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
