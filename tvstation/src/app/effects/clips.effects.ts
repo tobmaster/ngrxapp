@@ -3,8 +3,8 @@ import {Actions, Effect, ofType} from '@ngrx/effects';
 import {Store} from '@ngrx/store';
 import {AppState} from '../store';
 import {ClipService} from '../mediapool/services/clip.service';
-import {clipsLoaded, clipsFetch, clipDelete, clipCreate, clipDeleted, clipCreated} from '../store/clip.actions';
-import {exhaustMap, map, mergeMap} from 'rxjs/operators';
+import {clipCreate, clipCreated, clipDelete, clipDeleted, clipsFetch, clipsLoaded} from '../store/clip.actions';
+import {exhaustMap, map, tap} from 'rxjs/operators';
 import {Clip} from '../mediapool/data/clip';
 
 @Injectable()
@@ -32,7 +32,7 @@ export class ClipsEffects {
       map(action => action.clip),
       exhaustMap((clip: Clip) =>
         this.clipService.delete(clip).pipe(
-          map(clips => clipDeleted(clip.id))
+          map(_ => clipDeleted({id: clip.id}))
         )
       )
     );
@@ -44,7 +44,8 @@ export class ClipsEffects {
       map(action => action.clip),
       exhaustMap((clip: Clip) =>
         this.clipService.save(clip).pipe(
-          map(clips => clipCreated({clip}))
+          tap(_ => console.log('x',clip)),
+          map(savedClip => clipCreated({clip: savedClip}))
         )
       )
     );
